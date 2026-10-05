@@ -1,13 +1,14 @@
 function formatAs12HourClock(time) {
   const hours = Number(time.slice(0, 2));
+  const minutes = time.slice(-3);
   if (hours === 0) {
-    return `${String(hours + 12).padStart(2, "0")}${time.slice(2, 5)} am`;
+    return `12${minutes} am`;
   }
   if (hours === 12) {
     return `${time} pm`;
   }
   if (hours > 12) {
-    return `${String(hours - 12).padStart(2, "0")}${time.slice(2, 5)} pm`;
+    return `${String(hours - 12).padStart(2, "0")}${minutes} pm`;
   }
   return `${time} am`;
 }

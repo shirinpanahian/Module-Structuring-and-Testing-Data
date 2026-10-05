@@ -22,6 +22,14 @@ test("can correctly convert afternoon with double-digit minutes", function () {
   assert.equal(formatAs12HourClock("13:15"), "01:15 pm");
 });
 
+test("can correctly convert afternoon with double-digit minutes", function () {
+  assert.equal(formatAs12HourClock("13:15"), "01:15 pm");
+});
+
+test("can correctly convert afternoon with double-digit minutes", function () {
+  assert.equal(formatAs12HourClock("23:59"), "11:59 pm");
+});
+
 test("can correctly convert late evening with single-digit minutes", function () {
   assert.equal(formatAs12HourClock("23:05"), "11:05 pm");
 });
