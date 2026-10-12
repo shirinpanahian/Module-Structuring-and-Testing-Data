@@ -36,3 +36,9 @@ test(`should return "Reflex angle" when (180 < angle < 360)`, () => {
   expect(getAngleType(359)).toEqual("Reflex angle");
 });
 // Case 6: Invalid angles
+test(`should return "Invalid angles" when angle is not number`, () => {
+  // Test various Obtuse angle, including boundary cases
+  expect(() => getAngleType(" ")).toThrow("Input must be a number");
+  expect(() => getAngleType("Shirin")).toThrow("Input must be a number");
+  expect(() => getAngleType("*123")).toThrow("Input must be a number");
+});
