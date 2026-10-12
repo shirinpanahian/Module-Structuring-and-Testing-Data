@@ -28,7 +28,8 @@ test("zero numerator", () => {
 
 test("Negative numerator", () => {
   // Example: negative numerator is a proper fraction?
-  assert.equal(isProperFraction(-2, 3), true);
+  assert.equal(isProperFraction(-3, 8), true);
+  assert.equal(isProperFraction(-9, 4), false);
 });
 
 test("Negative denominator", () => {
