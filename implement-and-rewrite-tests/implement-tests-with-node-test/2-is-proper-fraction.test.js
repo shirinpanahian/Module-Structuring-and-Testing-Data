@@ -12,6 +12,11 @@ test("Basic proper fraction", () => {
 });
 
 test("improper fraction", () => {
-  // Example: 1/2 is a proper fraction
+  // Example: 2/1 is a improper fraction
   assert.equal(isProperFraction(2, 1), false);
+});
+
+test("Equal numerator and denominator", () => {
+  // Example: equal number
+  assert.equal(isProperFraction(5, 5), false);
 });
