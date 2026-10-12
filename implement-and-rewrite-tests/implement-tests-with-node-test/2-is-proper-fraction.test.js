@@ -20,3 +20,18 @@ test("Equal numerator and denominator", () => {
   // Example: equal number
   assert.equal(isProperFraction(5, 5), false);
 });
+
+test("zero numerator", () => {
+  // Example: zero numerator is a proper fraction?
+  assert.equal(isProperFraction(0, 6), true);
+});
+
+test("Negative numerator", () => {
+  // Example: negative numerator is a proper fraction?
+  assert.equal(isProperFraction(-2, 3), true);
+});
+
+test("Negative denominator", () => {
+  // Example: negative numerator is a proper fraction?
+  assert.equal(isProperFraction(2, -5), true);
+});
