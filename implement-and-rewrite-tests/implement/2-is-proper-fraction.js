@@ -15,8 +15,5 @@
 
 export function isProperFraction(numerator, denominator) {
   // TODO: Implement this function
-  if (Math.abs(numerator) < Math.abs(denominator)) {
-    return true;
-  }
-  return false;
+  return Math.abs(numerator) < Math.abs(denominator);
 }

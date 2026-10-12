@@ -32,7 +32,7 @@ test("Negative numerator", () => {
 });
 
 test("Negative denominator", () => {
-  // Example: negative numerator is a proper fraction?
+  // Example: negative denominator is a proper fraction?
   assert.equal(isProperFraction(2, -5), true);
 });
 
@@ -40,4 +40,19 @@ test("Both negative", () => {
   // Example: Both negative is a proper fraction?
   assert.equal(isProperFraction(-3, -5), true);
   assert.equal(isProperFraction(-5, -2), false);
+});
+
+test("Zero denominator", () => {
+  // Example: Zero denominator is a proper fraction?
+  assert.equal(isProperFraction(7, 0), false);
+});
+
+test("Zero numerator and negative denominator", () => {
+  // Example: Zero numerator and negative denominator is a proper fraction?
+  assert.equal(isProperFraction(0, -7), true);
+});
+
+test("Both Zero", () => {
+  // Example: Both Zero is a proper fraction?
+  assert.equal(isProperFraction(0, 0), false);
 });
