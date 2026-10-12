@@ -35,3 +35,9 @@ test("Negative denominator", () => {
   // Example: negative numerator is a proper fraction?
   assert.equal(isProperFraction(2, -5), true);
 });
+
+test("Both negative", () => {
+  // Example: Both negative is a proper fraction?
+  assert.equal(isProperFraction(-3, -5), true);
+  assert.equal(isProperFraction(-5, -2), false);
+});
