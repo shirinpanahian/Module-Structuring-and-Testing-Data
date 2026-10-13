@@ -7,9 +7,11 @@ import { getCardValue } from "../implement/3-get-card-value.js";
 
 test("Valid single-digit card", () => {
   assert.equal(getCardValue("9♠"), 9);
-  assert.equal(getCardValue("10♠"), 10);
 });
 
+test("Valid double-digit card", () => {
+  assert.equal(getCardValue("10♠"), 10);
+});
 test("Ace card", () => {
   assert.equal(getCardValue("A♠"), 11);
   assert.equal(getCardValue("A♣"), 11);
