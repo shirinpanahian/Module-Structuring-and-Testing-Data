@@ -19,7 +19,6 @@
 export function getAngleType(angle) {
   // TODO: Implement this function
   if (typeof angle != `number` || Number.isNaN(angle)) {
-    console.log(typeof angle);
     throw new Error("Input must be a number");
   }
 
