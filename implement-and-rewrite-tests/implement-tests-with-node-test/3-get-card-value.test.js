@@ -20,6 +20,15 @@ test("Face card", () => {
   assert.equal(getCardValue("J♠"), 10);
 });
 
+test("card is not a string", () => {
+  assert.throws(
+    () => {
+      getCardValue(9);
+    },
+    { message: "Input must be a String" }
+  );
+});
+
 test("Arbitrary non-card string", () => {
   assert.throws(
     () => getCardValue("invalid"),
@@ -46,13 +55,13 @@ test("Arbitrary non-card string", () => {
   );
 
   assert.throws(
-    () => getCardValue("7"),
+    () => getCardValue("extra"),
     /Expected a number followed by a suit, but got invalid/,
     "Expected clear error"
   );
 
   assert.throws(
-    () => getCardValue(""),
+    () => getCardValue("08♠"),
     /Expected a number followed by a suit, but got invalid/,
     "Expected clear error"
   );
