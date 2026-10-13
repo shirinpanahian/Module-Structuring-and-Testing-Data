@@ -25,4 +25,26 @@
 
 export function getCardValue(card) {
   // TODO: Implement this function
+  const rank = card.slice(0, -1);
+  const suit = card.slice(-1);
+
+  if (suit != "♠" && suit != "♥" && suit != "♦" && suit != "♣") {
+    throw new Error("Expected a number followed by a suit, but got invalid");
+  }
+  if (Number(rank) >= 2 && Number(rank) <= 10) {
+    return rank;
+  }
+
+  if (card.slice(0, 1) === "A") {
+    return 11;
+  }
+
+  if (
+    card.slice(0, 1) === "J" ||
+    card.slice(0, 1) === "Q" ||
+    card.slice(0, 1) === "K"
+  ) {
+    return 10;
+  }
+  throw new Error("Expected a number followed by a suit, but got invalid");
 }
