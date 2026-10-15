@@ -1,4 +1,5 @@
 import { getOrdinalNumber } from "./get-ordinal-number.js";
+import { test, expect } from "@jest/globals";
 // In this week's prep, we started implementing getOrdinalNumber.
 
 // Continue testing and implementing getOrdinalNumber for additional cases.
@@ -11,6 +12,11 @@ import { getOrdinalNumber } from "./get-ordinal-number.js";
 // This approach improves coverage and makes our tests easier to maintain.
 
 // Case 1: Numbers ending with 1 (but not 11)
+test("should not append 'st' for number ending with 11 ", () => {
+  expect(() => getOrdinalNumber(11)).toThrow("Input must not ending with 11");
+  expect(() => getOrdinalNumber(111)).toThrow("Input must not ending with 11");
+});
+
 // When the number ends with 1, except those ending with 11,
 // Then the function should return a string by appending "st" to the number.
 test("should append 'st' for numbers ending with 1, except those ending with 11", () => {
