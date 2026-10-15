@@ -18,10 +18,38 @@ test("should count multiple occurrences of a character", () => {
 });
 
 test("should count multiple occurrences of a character", () => {
+  const str = "aaaaa";
+  const char = "a";
+  const count = countChar(str, char);
+  expect(count).toEqual(5);
+});
+
+test("should count multiple occurrences of a character", () => {
+  const str = "Shirin";
+  const char = "h";
+  const count = countChar(str, char);
+  expect(count).toEqual(1);
+});
+
+test("should count multiple occurrences of a character", () => {
   const str = "This ia a second string test";
   const char = "s";
   const count = countChar(str, char);
   expect(count).toEqual(4);
+});
+
+test("should count multiple occurrences of a character", () => {
+  const str = "";
+  const char = "t";
+  const count = countChar(str, char);
+  expect(count).toEqual(0);
+});
+
+test("should count multiple occurrences of a character", () => {
+  const str = "TTTT";
+  const char = "t";
+  const count = countChar(str, char);
+  expect(count).toEqual(0);
 });
 
 // Scenario: No Occurrences
