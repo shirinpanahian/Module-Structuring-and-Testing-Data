@@ -38,6 +38,7 @@ export function getCardValue(card) {
     "J",
     "Q",
     "K",
+    "A",
   ];
   const validSuits = ["♠", "♥", "♦", "♣"];
   if (typeof card != `string`) {
