@@ -12,7 +12,7 @@ test(`Should return 11 when given an ace card`, () => {
 
 // Suggestion: Group the remaining test data into these categories:
 //   Number Cards (2-10)
-test(`Should return number for Valid digit card`, () => {
+test(`Should return number card for Valid digit card`, () => {
   expect(getCardValue("3♠")).toEqual(3);
   expect(getCardValue("7♥")).toEqual(7);
   expect(getCardValue("10♦")).toEqual(10);
