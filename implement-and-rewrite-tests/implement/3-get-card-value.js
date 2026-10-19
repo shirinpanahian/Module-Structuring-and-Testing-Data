@@ -25,20 +25,29 @@
 
 export function getCardValue(card) {
   // TODO: Implement this function
-
+  const validRanks = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K",
+  ];
+  const validSuits = ["♠", "♥", "♦", "♣"];
   if (typeof card != `string`) {
     throw new Error("Input must be a String");
   }
-  const validRanks = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
   const rank = card.slice(0, -1);
   const suit = card.slice(-1);
 
-  if (suit != "♠" && suit != "♥" && suit != "♦" && suit != "♣") {
+  if (!validRanks.includes(rank) || !validSuits.includes(suit)) {
     throw new Error("Expected a number followed by a suit, but got invalid");
-  }
-
-  if (validRanks.includes(rank)) {
-    return Number(rank);
   }
 
   if (rank === "A") {
@@ -48,5 +57,5 @@ export function getCardValue(card) {
   if (rank === "J" || rank === "Q" || rank === "K") {
     return 10;
   }
-  throw new Error("Expected a number followed by a suit, but got invalid");
+  return Number(rank);
 }

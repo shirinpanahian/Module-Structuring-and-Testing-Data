@@ -24,7 +24,7 @@ test(`should return "Obtuse angle" when (90 < angle < 180)`, () => {
   expect(getAngleType(179)).toEqual("Obtuse angle");
 });
 // Case 4: Straight angle
-test(`should return "Obtuse angle" when (angle = 180)`, () => {
+test(`should return "Straight angle" when (angle = 180)`, () => {
   // Test various Straight angle
   expect(getAngleType(180)).toEqual("Straight angle");
 });
@@ -41,4 +41,11 @@ test(`should return "Invalid angles" when angle is not number`, () => {
   expect(() => getAngleType(" ")).toThrow("Input must be a number");
   expect(() => getAngleType("Shirin")).toThrow("Input must be a number");
   expect(() => getAngleType("*123")).toThrow("Input must be a number");
+});
+// Case 7: Invalid numeric angles
+test("should throw for invalid numeric angles", () => {
+  expect(() => getAngleType(-10)).toThrow("Invalid angle");
+  expect(() => getAngleType(0)).toThrow("Invalid angle");
+  expect(() => getAngleType(360)).toThrow("Invalid angle");
+  expect(() => getAngleType(500)).toThrow("Invalid angle");
 });

@@ -38,3 +38,10 @@ test("Reflex angle for angles greater than 180° and less than 360°", () => {
   const message = getAngleType(260);
   assert.equal(message, "Reflex angle");
 });
+
+test("throws for invalid numeric angles", () => {
+  assert.throws(() => getAngleType(-10), { message: "Invalid angle" });
+  assert.throws(() => getAngleType(360), { message: "Invalid angle" });
+  assert.throws(() => getAngleType(0), { message: "Invalid angle" });
+  assert.throws(() => getAngleType(500), { message: "Invalid angle" });
+});

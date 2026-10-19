@@ -22,7 +22,7 @@ export function getAngleType(angle) {
     throw new Error("Input must be a number");
   }
 
-  if (angle >= 0 && angle < 90) {
+  if (angle > 0 && angle < 90) {
     return "Acute angle";
   }
 
@@ -41,4 +41,6 @@ export function getAngleType(angle) {
   if (angle > 180 && angle < 360) {
     return "Reflex angle";
   }
+
+  throw new Error("Invalid angle");
 }
